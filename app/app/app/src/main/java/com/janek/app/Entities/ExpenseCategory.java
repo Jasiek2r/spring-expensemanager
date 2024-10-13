@@ -1,6 +1,6 @@
-package com.janek.app;
+package com.janek.app.Entities;
 
-
+import jakarta.persistence.*;
 import java.util.UUID;
 import java.util.Comparator;
 import java.util.List;
@@ -12,15 +12,16 @@ import java.io.Serializable;
 
 @Builder
 public class ExpenseCategory implements Serializable{
-    @Getter
+    @Getter @Id
+    @Column(name = "id", nullable = false)
     private UUID id = UUID.randomUUID();
-    @Getter @Setter
+    @Getter @Setter @Column(name="name", nullable = false)
     private String name;
-    @Getter @Setter
+    @Getter @Setter @Column(name = "description")
     private String description;
-    @Getter @Setter
+    @Getter @Setter @Column(name = "budget", nullable = false)
     private double budget;
-    @Getter @Setter
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Expense> expenses;
 
     private static Comparator<ExpenseCategory> byHashComparator = new Comparator<ExpenseCategory>() {

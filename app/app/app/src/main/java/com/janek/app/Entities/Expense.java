@@ -1,21 +1,29 @@
-package com.janek.app;
+package com.janek.app.Entities;
 import java.util.UUID;
 import java.util.Comparator;
+
+
+import com.janek.app.Entities.ExpenseCategory;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.Builder;
 import java.io.Serializable;
+
 @Builder
+@Entity
+@Table(name="expenses")
 public class Expense implements Serializable{
-    @Getter @Setter
-    private UUID id = UUID.randomUUID();
-    @Getter @Setter
+    @Getter @Id
+    private UUID id = UUID.randomUUID(); //Client-generated UUID
+    @Getter @Setter @Column(name="name", nullable = false)
     private String name;
-    @Getter @Setter
+    @Getter @Setter @Column(name="description")
     private String description;
-    @Getter @Setter
+    @Getter @Setter @Column(name="amount", nullable = false)
     private double amount;
-    @Getter @Setter
+    @Getter @Setter @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id", referencedColumnName = "id")
     private ExpenseCategory category;
 
     private static Comparator<Expense> byHashComparator = new Comparator<Expense>() {

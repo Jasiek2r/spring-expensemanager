@@ -1,4 +1,4 @@
-package com.janek.app;
+package com.janek.app.Entities.DTO;
 import lombok.Builder;
 import lombok.Getter;
 import java.util.Comparator;
