@@ -10,9 +10,10 @@ import lombok.Setter;
 import lombok.Builder;
 import java.io.Serializable;
 
-@Builder
+
 @Entity
 @Table(name="expenses")
+@Builder
 public class Expense implements Serializable{
     @Getter @Id
     private UUID id = UUID.randomUUID(); //Client-generated UUID
@@ -22,7 +23,7 @@ public class Expense implements Serializable{
     private String description;
     @Getter @Setter @Column(name="amount", nullable = false)
     private double amount;
-    @Getter @Setter @ManyToOne(fetch = FetchType.LAZY)
+    @Getter @Setter @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private ExpenseCategory category;
 
@@ -39,7 +40,6 @@ public class Expense implements Serializable{
             return o1.getName().compareTo(o2.getName());
         }
     };
-
 
     public int compareByHash(Expense o1, Expense o2) {
         return this.byHashComparator.compare(o1, o2);

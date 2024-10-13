@@ -11,6 +11,7 @@ import java.io.Serializable;
 
 
 @Builder
+@Entity
 public class ExpenseCategory implements Serializable{
     @Getter @Id
     @Column(name = "id", nullable = false)
