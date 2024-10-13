@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da6c7702-95d7-4191-a223-1a35dceaf7ed" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/Entities/DTO/ExpenseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/Entities/Expense.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/UtilityClasses/DataGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/UtilityClasses/FileSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/com/janek/app/UtilityClasses/Utility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/java/com/janek/app/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/DataGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/Expense$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/Expense$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/Expense$ExpenseBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/Expense.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseCategory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseCategory$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseCategory$ExpenseCategoryBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseDto$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseDto$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseDto$ExpenseDtoBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/ExpenseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/FileSerializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/Pipeline.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/janek/app/Utility.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/my-app-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/surefire-reports/TEST-com.janek.app.AppTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/surefire-reports/com.janek.app.AppTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/test-classes/com/janek/app/AppTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2nNfD1m5guEFqTcyMitlQrsNaeL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="app" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da6c7702-95d7-4191-a223-1a35dceaf7ed" name="Changes" comment="" />
+      <created>1728818331520</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728818331520</updated>
+    </task>
+    <servers />
+  </component>
+</project>
