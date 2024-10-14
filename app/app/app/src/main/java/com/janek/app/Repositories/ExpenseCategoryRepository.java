@@ -13,13 +13,18 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+/*
+    An interface of ExpenseCategory repository created using Jakarta Persistence API
+ */
+
 @Repository
 public interface ExpenseCategoryRepository extends JpaRepository<ExpenseCategory, UUID>{
+    //Fetch an expense category by its id
     Optional<ExpenseCategory> findById(UUID expenseCategoryId);
-    //Fetch all expenses in repository
+    //Fetch all expense categories in repository
     List<ExpenseCategory> findAll();
-    //Save a new expense to the repository
+    //Save a new expense category to the repository
     ExpenseCategory save(ExpenseCategory newExpenseCategoryEntity);
-    //Delete an expense from category
+    //Delete an expense category
     void delete(ExpenseCategory expenseCategoryEntity);
 }

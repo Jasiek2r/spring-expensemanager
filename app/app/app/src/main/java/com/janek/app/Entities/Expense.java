@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Table(name="expenses")
 @Builder
 public class Expense implements Serializable{
-    @Getter @Id
+    @Getter @Setter @Id
     private UUID id = UUID.randomUUID(); //Client-generated UUID
     @Getter @Setter @Column(name="name", nullable = false)
     private String name;
@@ -26,6 +26,17 @@ public class Expense implements Serializable{
     @Getter @Setter @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private ExpenseCategory category;
+
+    public Expense(UUID id, String name, String description, double amount, ExpenseCategory category){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.amount = amount;
+        this.category = category;
+    }
+    public Expense(){
+
+    }
 
     private static Comparator<Expense> byHashComparator = new Comparator<Expense>() {
             @Override

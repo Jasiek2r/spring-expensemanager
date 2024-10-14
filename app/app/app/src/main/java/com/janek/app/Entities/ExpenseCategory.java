@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Builder
 @Entity
 public class ExpenseCategory implements Serializable{
-    @Getter @Id
+    @Getter @Setter @Id
     @Column(name = "id", nullable = false)
     private UUID id = UUID.randomUUID();
     @Getter @Setter @Column(name="name", nullable = false)
@@ -22,7 +22,7 @@ public class ExpenseCategory implements Serializable{
     private String description;
     @Getter @Setter @Column(name = "budget", nullable = false)
     private double budget;
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @Getter @Setter @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Expense> expenses;
 
     private static Comparator<ExpenseCategory> byHashComparator = new Comparator<ExpenseCategory>() {
@@ -37,6 +37,17 @@ public class ExpenseCategory implements Serializable{
             return o1.getName().compareTo(o2.getName());
         }
     };
+
+    public ExpenseCategory(UUID id, String name, String description, double budget, List<Expense> expenses){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.budget = budget;
+        this.expenses = expenses;
+    }
+    public ExpenseCategory(){
+
+    }
 
 
     public void addExpense(Expense expense) {
@@ -59,7 +70,6 @@ public class ExpenseCategory implements Serializable{
                 ", name=" + name +
                 ", description=" + description +
                 ", budget=" + budget +
-                ", expenses=" + expenses +
                 "}";
     }
 

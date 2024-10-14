@@ -9,6 +9,10 @@ import java.util.Optional;
 import java.util.List;
 import java.util.UUID;
 
+/*
+    An interface of Expense repository created using Jakarta Persistence API
+ */
+
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, UUID>{
     //Fetch an expense by id
@@ -19,6 +23,6 @@ public interface ExpenseRepository extends JpaRepository<Expense, UUID>{
     Expense save(Expense newExpenseEntity);
     //Query expenses by category
     List<Expense> findByCategory(ExpenseCategory category);
-    //Delete an expense from category
+    //Delete an expense
     void delete(Expense expenseEntity);
 }
