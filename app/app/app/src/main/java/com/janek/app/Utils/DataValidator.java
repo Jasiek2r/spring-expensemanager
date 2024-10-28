@@ -1,6 +1,5 @@
 package com.janek.app.Utils;
 
-
 /*
     Utility class used for validating user input
  */

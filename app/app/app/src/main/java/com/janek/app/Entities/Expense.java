@@ -6,6 +6,7 @@ import java.util.Comparator;
 import com.janek.app.Entities.ExpenseCategory;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Builder;
 import java.io.Serializable;
@@ -14,16 +15,17 @@ import java.io.Serializable;
 @Entity
 @Table(name="expenses")
 @Builder
+@Getter @Setter
 public class Expense implements Serializable{
-    @Getter @Setter @Id
+    @Id
     private UUID id = UUID.randomUUID(); //Client-generated UUID
-    @Getter @Setter @Column(name="name", nullable = false)
+    @Column(name="name", nullable = false)
     private String name;
-    @Getter @Setter @Column(name="description")
+    @Column(name="description")
     private String description;
-    @Getter @Setter @Column(name="amount", nullable = false)
+    @Column(name="amount", nullable = false)
     private double amount;
-    @Getter @Setter @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private ExpenseCategory category;
 

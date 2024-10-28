@@ -23,7 +23,6 @@ public class ExpenseCategoryService {
     @Autowired
     private ExpenseCategoryRepository categoryRepository;
 
-
     //Fetch all expense categories in repository
     public List<ExpenseCategory> findAllCategories() {
         return categoryRepository.findAll();
@@ -42,5 +41,9 @@ public class ExpenseCategoryService {
     //Delete an expense category from repository
     public void deleteCategory(UUID id) {
         categoryRepository.deleteById(id);
+    }
+    //Db flushing
+    public void flush(){
+        categoryRepository.flush();
     }
 }

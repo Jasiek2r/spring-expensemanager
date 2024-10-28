@@ -33,6 +33,7 @@ public class ExpenseService {
 
     //Save an expense to the repository
     public Expense saveExpense(Expense expense) {
+        System.out.println("saving...");
         return expenseRepository.save(expense);
     }
 
@@ -44,5 +45,9 @@ public class ExpenseService {
     //Fetch a list of expenses that belong to a given category
     public List<Expense> findExpensesByCategory(ExpenseCategory category) {
         return expenseRepository.findByCategory(category);
+    }
+    //Db flushing
+    public void flush(){
+        expenseRepository.flush();
     }
 }

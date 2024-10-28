@@ -4,25 +4,26 @@ import jakarta.persistence.*;
 import java.util.UUID;
 import java.util.Comparator;
 import java.util.List;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.Builder;
+
+import lombok.*;
+
 import java.io.Serializable;
 
 
 @Builder
 @Entity
+@Getter @Setter
 public class ExpenseCategory implements Serializable{
-    @Getter @Setter @Id
+    @Id
     @Column(name = "id", nullable = false)
     private UUID id = UUID.randomUUID();
-    @Getter @Setter @Column(name="name", nullable = false)
+    @Column(name="name", nullable = false)
     private String name;
-    @Getter @Setter @Column(name = "description")
+    @Column(name = "description")
     private String description;
-    @Getter @Setter @Column(name = "budget", nullable = false)
+    @Column(name = "budget", nullable = false)
     private double budget;
-    @Getter @Setter @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Expense> expenses;
 
     private static Comparator<ExpenseCategory> byHashComparator = new Comparator<ExpenseCategory>() {
@@ -48,7 +49,6 @@ public class ExpenseCategory implements Serializable{
     public ExpenseCategory(){
 
     }
-
 
     public void addExpense(Expense expense) {
         expense.setCategory(this);
