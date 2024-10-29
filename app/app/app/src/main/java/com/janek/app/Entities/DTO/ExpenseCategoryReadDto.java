@@ -24,5 +24,5 @@ public class ExpenseCategoryReadDto {
     private String name;
     private String description;
     private double budget;
-    private List<Expense> expenses;
+    private List<UUID> expenseIds;
 }

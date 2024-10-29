@@ -5,7 +5,6 @@ import com.janek.app.Entities.DTO.ListReadDto.ExpenseListItemDto;
 import com.janek.app.Entities.DTO.ListReadDto.ExpensesReadDto;
 import com.janek.app.Entities.ExpenseCategory;
 import com.janek.app.Services.ExpenseCategoryService;
-import jakarta.transaction.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 import com.janek.app.Entities.DTO.ExpenseCreateDto;
 import com.janek.app.Entities.DTO.ExpenseReadDto;
