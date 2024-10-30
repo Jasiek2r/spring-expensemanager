@@ -165,5 +165,14 @@ public class ExpenseController {
 
         return new ResponseEntity<>(expenseDto, HttpStatus.OK); // 200 OK
     }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<ExpenseReadDto> deleteExpense(@PathVariable UUID id){
+        Optional<Expense> existingExpenseOptional = expenseService.findExpenseById(id);
+        if (existingExpenseOptional.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND); // 404 NOT FOUND
+        }
+        expenseService.deleteExpense(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
 

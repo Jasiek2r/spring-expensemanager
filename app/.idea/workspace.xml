@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c1ee78-f5de-48f1-a902-c3265443189c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryUpdateDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseCategoryListItemDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseCategoryListItemDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/requests.http" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +36,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AppApplication.executor": "Debug",
+    "Application.AppApplication.executor": "Run",
     "Application.SpringApplication.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -58,16 +55,5 @@
       <updated>1728823668820</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

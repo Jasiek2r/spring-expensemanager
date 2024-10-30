@@ -116,4 +116,13 @@ public class ExpenseCategoryController {
 
         return new ResponseEntity<>(categoryDto, HttpStatus.OK);
     }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<ExpenseCategoryReadDto> deleteCategory(@PathVariable UUID id){
+        Optional<ExpenseCategory> categoryOptional = expenseCategoryService.findCategoryById(id);
+        if (categoryOptional.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        expenseCategoryService.deleteCategory(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

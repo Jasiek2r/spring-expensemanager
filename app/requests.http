@@ -1,0 +1,76 @@
+# Expense Manager API Requests Documentation and Tests
+# ============================================
+
+# Expense Controller
+
+### Get all expenses
+GET http://localhost:8080/api/expense-manager/expenses/
+Accept: application/json
+
+### Get a specific expense by ID (enter a correct one from the first response!)
+GET http://localhost:8080/api/expense-manager/expenses/36af5456-5da5-4d61-a24f-9d5769bae6eb
+Accept: application/json
+
+
+### Get expenses by category ID (enter a correct one based on previous response!)
+GET http://localhost:8080/api/expense-manager/expenses/category/80624076-a574-4ba9-ae5e-6c1824080bfb
+Accept: application/json
+
+### Create a new expense
+POST http://localhost:8080/api/expense-manager/expenses/new
+Content-Type: application/json
+
+{
+  "name": "Lunch",
+  "description": "Lunch at a restaurant",
+  "amount": 1550,
+  "categoryId": "80624076-a574-4ba9-ae5e-6c1824080bfb"
+}
+
+### Update an existing expense
+PATCH http://localhost:8080/api/expense-manager/expenses/update/93ef6a73-6b9f-49e3-9a8d-c21a235b48b6
+Content-Type: application/json
+
+{
+  "name": "Lunch Updated",
+  "description": "Updated lunch description",
+  "amount": 20.00,
+  "categoryId": "80624076-a574-4ba9-ae5e-6c1824080bfb"
+}
+
+### Delete an expense
+DELETE http://localhost:8080/api/expense-manager/expenses/delete/93ef6a73-6b9f-49e3-9a8d-c21a235b48b6
+Accept: application/json
+
+# Expense Category Controller
+
+### Get all expense categories
+GET http://localhost:8080/api/expense-manager/categories/
+Accept: application/json
+
+### Get a specific expense category by ID
+GET http://localhost:8080/api/expense-manager/categories/80624076-a574-4ba9-ae5e-6c1824080bfb
+Accept: application/json
+
+
+### Create a new expense category
+POST http://localhost:8080/api/expense-manager/categories/new
+Content-Type: application/json
+
+{
+  "name": "Food",
+  "description": "Food-related expenses"
+}
+
+### Update an existing expense category
+PATCH http://localhost:8080/api/expense-manager/categories/update/3a90e9f9-38c4-4156-a9ee-de43ec217667
+Content-Type: application/json
+
+{
+  "name": "Food & Drink",
+  "description": "Updated description for food-related expenses"
+}
+
+### Delete an expense category
+DELETE http://localhost:8080/api/expense-manager/categories/delete/3a90e9f9-38c4-4156-a9ee-de43ec217667
+Accept: application/json
