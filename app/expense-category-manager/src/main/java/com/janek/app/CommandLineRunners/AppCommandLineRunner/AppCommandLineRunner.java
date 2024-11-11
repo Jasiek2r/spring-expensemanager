@@ -20,9 +20,6 @@ import java.util.Scanner;
 public class AppCommandLineRunner implements CommandLineRunner {
 
     @Autowired
-    private ExpenseService expenseService;
-
-    @Autowired
     private ExpenseCategoryService expenseCategoryService;
 
     private Scanner standardInputScanner = new Scanner(System.in);
@@ -49,10 +46,7 @@ public class AppCommandLineRunner implements CommandLineRunner {
     private void displayMenu() {
         System.out.println("\n--- Menu ---");
         System.out.println("1. list categories - List all expense categories");
-        System.out.println("2. list expenses - List all expenses");
-        System.out.println("3. add expense - Add a new expense");
-        System.out.println("4. delete expense - Delete an expense by ID");
-        System.out.println("5. exit - Exit the application");
+        System.out.println("2. exit - Exit the application");
         System.out.print("Enter command: ");
     }
 

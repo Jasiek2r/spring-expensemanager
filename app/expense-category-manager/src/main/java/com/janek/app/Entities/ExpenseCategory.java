@@ -23,8 +23,6 @@ public class ExpenseCategory implements Serializable{
     private String description;
     @Column(name = "budget", nullable = false)
     private double budget;
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Expense> expenses;
 
     private static Comparator<ExpenseCategory> byHashComparator = new Comparator<ExpenseCategory>() {
         @Override
@@ -39,12 +37,11 @@ public class ExpenseCategory implements Serializable{
         }
     };
 
-    public ExpenseCategory(UUID id, String name, String description, double budget, List<Expense> expenses){
+    public ExpenseCategory(UUID id, String name, String description, double budget){
         this.id = id;
         this.name = name;
         this.description = description;
         this.budget = budget;
-        this.expenses = expenses;
     }
     public ExpenseCategory(){
 
@@ -52,7 +49,6 @@ public class ExpenseCategory implements Serializable{
 
     public void addExpense(Expense expense) {
         expense.setCategory(this);
-        this.expenses.add(expense);
     }
 
     public int compareByHash(ExpenseCategory o1, ExpenseCategory o2) {

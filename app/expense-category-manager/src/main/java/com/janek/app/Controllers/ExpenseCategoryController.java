@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -31,9 +32,8 @@ public class ExpenseCategoryController {
         }
 
         ExpenseCategory category = categoryOptional.get();
-        List<UUID> expenseIds = category.getExpenses().stream()
-                .map(expense -> expense.getId())
-                .collect(Collectors.toList());
+        // TODO: implement expense IDs searchup
+        List<UUID> expenseIds = new ArrayList<>();
 
         ExpenseCategoryReadDto categoryDto = ExpenseCategoryReadDto.builder()
                 .id(category.getId())
@@ -100,9 +100,8 @@ public class ExpenseCategoryController {
         existingCategory.setName(categoryUpdateDto.getName());
         existingCategory.setDescription(categoryUpdateDto.getDescription());
 
-        List<UUID> expenseIds = existingCategory.getExpenses().stream()
-                .map(expense -> expense.getId())
-                .collect(Collectors.toList());
+        // TODO: implement expense IDs searchup
+        List<UUID> expenseIds = new ArrayList<>();
 
         ExpenseCategory updatedCategory = expenseCategoryService.saveCategory(existingCategory);
 

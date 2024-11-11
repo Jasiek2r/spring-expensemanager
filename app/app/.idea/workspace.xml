@@ -5,45 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8963a58c-b108-432c-83cc-bea25332dc5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../expense-category-manager/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/CommandLineRunners/AppCommandLineRunner/AppCommandLineDispatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/CommandLineRunners/AppCommandLineRunner/AppCommandLineRunner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryCreateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryUpdateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCreateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseReadDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseUpdateDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseCategoriesDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseCategoryListItemDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseListItemDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpensesReadDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/Expense.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Initializers/DataInitializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Repositories/ExpenseCategoryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Repositories/ExpenseRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Services/ExpenseCategoryService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Services/ExpenseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Utils/DataGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Utils/DataValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/janek/app/AppApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/CommandLineRunners/AppCommandLineRunner/AppCommandLineDispatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/CommandLineRunners/AppCommandLineRunner/AppCommandLineDispatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/CommandLineRunners/AppCommandLineRunner/AppCommandLineRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/CommandLineRunners/AppCommandLineRunner/AppCommandLineRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/DTO/ExpenseReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/DTO/ExpenseUpdateDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseListItemDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpensesReadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Repositories/ExpenseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Services/ExpenseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Utils/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Utils/DataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Utils/DataValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
