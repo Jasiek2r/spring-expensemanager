@@ -4,6 +4,7 @@ package com.janek.app.Controllers;
 import com.janek.app.Entities.DTO.ListReadDto.ExpenseListItemDto;
 import com.janek.app.Entities.DTO.ListReadDto.ExpensesReadDto;
 import com.janek.app.Entities.ExpenseCategory;
+import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.web.bind.annotation.RestController;
 import com.janek.app.Entities.DTO.ExpenseCreateDto;
@@ -174,5 +175,6 @@ public class ExpenseController {
         expenseService.deleteExpense(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+
 }
 

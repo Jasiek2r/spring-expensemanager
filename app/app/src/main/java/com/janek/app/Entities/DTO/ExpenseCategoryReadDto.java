@@ -1,15 +1,9 @@
 package com.janek.app.Entities.DTO;
 
-import com.janek.app.Entities.Expense;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
 import java.util.UUID;
 
 @Builder

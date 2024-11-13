@@ -6,11 +6,13 @@ import com.janek.app.Entities.DTO.ExpenseCategoryReadDto;
 import com.janek.app.Entities.DTO.ExpenseCategoryCreateDto;
 import com.janek.app.Entities.DTO.ListReadDto.ExpenseCategoryListItemDto;
 import com.janek.app.Entities.ExpenseCategory;
+import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,13 @@ public class ExpenseCategoryController {
     @Autowired
     private ExpenseCategoryService expenseCategoryService;
 
+    private final RestTemplate restTemplate;
+    private final String expenseManagementUrl = "http://localhost:8080/api/expense-manager/events"; // Target application URL
+
+    public ExpenseCategoryController(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
     @GetMapping(value = "/{id}")
     public ResponseEntity<ExpenseCategoryReadDto> getCategory(@PathVariable("id") UUID id) {
         Optional<ExpenseCategory> categoryOptional = expenseCategoryService.findCategoryById(id);
@@ -32,15 +41,12 @@ public class ExpenseCategoryController {
         }
 
         ExpenseCategory category = categoryOptional.get();
-        // TODO: implement expense IDs searchup
-        List<UUID> expenseIds = new ArrayList<>();
 
         ExpenseCategoryReadDto categoryDto = ExpenseCategoryReadDto.builder()
                 .id(category.getId())
                 .name(category.getName())
                 .description(category.getDescription())
                 .budget(category.getBudget())  // Assuming budget is present in ExpenseCategory
-                .expenseIds(expenseIds)
                 .build();
 
         return new ResponseEntity<>(categoryDto, HttpStatus.OK);
@@ -84,6 +90,9 @@ public class ExpenseCategoryController {
                 .description(savedCategory.getDescription())
                 .build();
 
+        // send event to the expense management application
+        sendCategoryEvent("ADD",savedCategory.getId());
+
         return new ResponseEntity<>(categoryDto, HttpStatus.CREATED);
     }
 
@@ -100,9 +109,6 @@ public class ExpenseCategoryController {
         existingCategory.setName(categoryUpdateDto.getName());
         existingCategory.setDescription(categoryUpdateDto.getDescription());
 
-        // TODO: implement expense IDs searchup
-        List<UUID> expenseIds = new ArrayList<>();
-
         ExpenseCategory updatedCategory = expenseCategoryService.saveCategory(existingCategory);
 
         ExpenseCategoryReadDto categoryDto = ExpenseCategoryReadDto.builder()
@@ -110,7 +116,6 @@ public class ExpenseCategoryController {
                 .name(updatedCategory.getName())
                 .description(updatedCategory.getDescription())
                 .budget(updatedCategory.getBudget())
-                .expenseIds(expenseIds)
                 .build();
 
         return new ResponseEntity<>(categoryDto, HttpStatus.OK);
@@ -121,7 +126,20 @@ public class ExpenseCategoryController {
         if (categoryOptional.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
+        // send event to the expense management application
+        sendCategoryEvent("REMOVE", id);
+
         expenseCategoryService.deleteCategory(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    private void sendCategoryEvent(String action, UUID expenseCategoryUUID){
+        CategoryEvent categoryEvent = new CategoryEvent();
+        categoryEvent.setAction(action);
+        categoryEvent.setExpenseCategoryId(expenseCategoryUUID);
+
+        // Send POST request to the elements management application
+        restTemplate.postForEntity(expenseManagementUrl + "/handle-category-event", categoryEvent, Void.class);
     }
 }

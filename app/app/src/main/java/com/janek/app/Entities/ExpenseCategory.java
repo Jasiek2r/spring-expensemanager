@@ -17,11 +17,11 @@ public class ExpenseCategory implements Serializable{
     @Id
     @Column(name = "id", nullable = false)
     private UUID id = UUID.randomUUID();
-    @Column(name="name", nullable = false)
+    @Column(name="name")
     private String name;
     @Column(name = "description")
     private String description;
-    @Column(name = "budget", nullable = false)
+    @Column(name = "budget")
     private double budget;
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Expense> expenses;

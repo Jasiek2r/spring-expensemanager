@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8c1ee78-f5de-48f1-a902-c3265443189c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Events/CategoryEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Events/InitializationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Events/CategoryEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Events/InitializationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-gateway/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-gateway/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-gateway/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-gateway/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app/src/main/java/com/janek/app/requests.http" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Controllers/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +61,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/janek/AppData/Local/GitHubDesktop/app-3.4.6/architektury-uslug-internetowych-lab1/app",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
