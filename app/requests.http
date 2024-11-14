@@ -8,12 +8,12 @@ GET http://localhost:8083/expenses/
 Accept: application/json
 
 ### Get a specific expense by ID (enter a correct one from the first response!)
-GET http://localhost:8083/expenses/80624076-a574-4ba9-ae5e-6c1824080bfb
+GET http://localhost:8083/expenses/c73caa5a-26f8-4abf-989a-aa98d83826d2
 Accept: application/json
 
 
 ### Get expenses by category ID (enter a correct one based on previous response!)
-GET http://localhost:8083/expenses/category/80624076-a574-4ba9-ae5e-6c1824080bfb
+GET http://localhost:8083/expenses/category/07735d6e-1f5a-41cd-8f51-08b0acd861b5
 Accept: application/json
 
 ### Create a new expense
@@ -24,11 +24,11 @@ Content-Type: application/json
   "name": "Lunch",
   "description": "Lunch at a restaurant",
   "amount": 1550,
-  "categoryId": "80624076-a574-4ba9-ae5e-6c1824080bfb"
+  "categoryId": "07735d6e-1f5a-41cd-8f51-08b0acd861b5"
 }
 
 ### Update an existing expense
-PATCH http://localhost:8083/expenses/update/93ef6a73-6b9f-49e3-9a8d-c21a235b48b6
+PATCH http://localhost:8083/expenses/update/f1b995b4-2ec1-421c-ad16-90515fd1c6d1
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 }
 
 ### Delete an expense
-DELETE http://localhost:8083/expenses/delete/93ef6a73-6b9f-49e3-9a8d-c21a235b48b6
+DELETE http://localhost:8083/expenses/delete/f1b995b4-2ec1-421c-ad16-90515fd1c6d1
 Accept: application/json
 
 # Expense Category Controller
@@ -49,7 +49,7 @@ GET http://localhost:8083/categories/
 Accept: application/json
 
 ### Get a specific expense category by ID
-GET http://localhost:8083/categories/80624076-a574-4ba9-ae5e-6c1824080bfb
+GET http://localhost:8083/categories/07735d6e-1f5a-41cd-8f51-08b0acd861b5
 Accept: application/json
 
 
@@ -63,7 +63,7 @@ Content-Type: application/json
 }
 
 ### Update an existing expense category
-PATCH http://localhost:8083/categories/update/3a90e9f9-38c4-4156-a9ee-de43ec217667
+PATCH http://localhost:8083/categories/update/7603ac98-cc03-43bd-9ba3-eab9d75c34c6
 Content-Type: application/json
 
 {
@@ -72,5 +72,5 @@ Content-Type: application/json
 }
 
 ### Delete an expense category
-DELETE http://localhost:8083/categories/delete/80624076-a574-4ba9-ae5e-6c1824080bfb
+DELETE http://localhost:8083/categories/delete/7603ac98-cc03-43bd-9ba3-eab9d75c34c6
 Accept: application/json
