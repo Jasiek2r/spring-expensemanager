@@ -1,0 +1,15 @@
+
+<div class="categories-wrapper">
+    <div *ngIf="categories.length > 0; else noCategories">
+        <ul>
+            <li *ngFor="let category of categories">
+            <span>{{ category.name }}</span> <!-- Display user-friendly category name -->
+            <button (click)="removeCategory(category.id)">Remove</button> <!-- Button to remove category -->
+            </li>
+        </ul>
+    </div>
+      
+    <ng-template #noCategories>
+        <p>No categories available.</p>
+    </ng-template>
+</div>
