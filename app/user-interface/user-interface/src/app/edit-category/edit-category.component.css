@@ -1,0 +1,26 @@
+.edit-category-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.edit-category-container{
+    display:flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, rgba(3, 150, 96, 1), rgba(2, 100, 64, 1));
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: Tahoma;
+}
+
+.btn.btn-warning:not(:disabled){
+    background-color: orange;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in;
+}
+
+.btn.btn-warning:not(:disabled):hover{
+    background-color: orangered;
+}

@@ -1,1 +1,43 @@
-<p>category-details works!</p>
+<div class="category-details-wrapper">
+    <div class="category-details-container" *ngIf="category">
+        <h2>Category Details</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Budget</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td>{{ category.description }}</td>
+                    <td>{{ category.budget | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>List of expenses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let expense of expenses">
+                    <td>{{ expense.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="http://localhost:4200/categories" class="link-button">back to all expense categories</a>
+        </p>
+        <p>
+            <a href="http://localhost:4200/categories" class="link-button">add new expense</a>
+        </p>
+    </div>
+    <div *ngIf="!category">
+        <p>Loading category details...</p>
+    </div>
+</div>

@@ -30,6 +30,7 @@ public class ExpenseController {
     @Autowired
     private ExpenseCategoryService expenseCategoryService;
 
+    @CrossOrigin
     @GetMapping(value = "/{id}")
     public ResponseEntity<ExpenseReadDto> getExpense(@PathVariable("id") UUID id){
         Optional<Expense> serverResponse = expenseService.findExpenseById(id);
@@ -50,6 +51,8 @@ public class ExpenseController {
 
         return new ResponseEntity<>(expenseDto, HttpStatus.OK);
     }
+
+    @CrossOrigin
     @GetMapping(value = "/")
     public ResponseEntity<ExpensesReadDto> getAllExpenses() {
         List<Expense> expenses = expenseService.findAllExpenses();
@@ -66,6 +69,8 @@ public class ExpenseController {
 
         return new ResponseEntity<>(expensesReadDto, HttpStatus.OK);
     }
+
+    @CrossOrigin
     @GetMapping(value = "/category/{id}")
     public ResponseEntity<ExpensesReadDto> getExpensesByCategory(@PathVariable UUID id){
         // Fetch a category if it is possible
@@ -89,6 +94,8 @@ public class ExpenseController {
                 .build();
         return new ResponseEntity<>(expensesReadDto, HttpStatus.OK);
     }
+
+    @CrossOrigin
     @PostMapping(value = "/new")  // Corrected the mapping to use POST for creating a new expense
     public ResponseEntity<ExpenseReadDto> createExpense(@RequestBody ExpenseCreateDto expenseCreateDto) {
         // Validate the incoming DTO
@@ -127,6 +134,7 @@ public class ExpenseController {
         return new ResponseEntity<>(expenseDto, HttpStatus.CREATED); // 201 CREATED
     }
 
+    @CrossOrigin
     @PatchMapping(value = "/update/{id}")
     public ResponseEntity<ExpenseReadDto> updateExpense(@PathVariable UUID id, @RequestBody ExpenseCreateDto expenseUpdateDto) {
         // Fetch the existing expense by ID
@@ -166,6 +174,8 @@ public class ExpenseController {
 
         return new ResponseEntity<>(expenseDto, HttpStatus.OK); // 200 OK
     }
+
+    @CrossOrigin
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<ExpenseReadDto> deleteExpense(@PathVariable UUID id){
         Optional<Expense> existingExpenseOptional = expenseService.findExpenseById(id);

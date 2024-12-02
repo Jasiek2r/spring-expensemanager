@@ -1,0 +1,21 @@
+.add-category-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.add-category-form{
+    display:flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, rgba(3, 150, 96, 1), rgba(2, 100, 64, 1));
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: Tahoma;
+}
+
+.add-category-form form div{
+    padding: 10px;
+}
+
+.add-category form div p{
+    margin: 0;
+}

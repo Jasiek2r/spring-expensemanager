@@ -33,6 +33,7 @@ public class ExpenseCategoryController {
         this.restTemplate = restTemplate;
     }
 
+    @CrossOrigin
     @GetMapping(value = "/{id}")
     public ResponseEntity<ExpenseCategoryReadDto> getCategory(@PathVariable("id") UUID id) {
         Optional<ExpenseCategory> categoryOptional = expenseCategoryService.findCategoryById(id);
@@ -52,7 +53,7 @@ public class ExpenseCategoryController {
         return new ResponseEntity<>(categoryDto, HttpStatus.OK);
     }
 
-
+    @CrossOrigin
     @GetMapping(value = "/")
     public ResponseEntity<ExpenseCategoriesDto> getAllCategories() {
         List<ExpenseCategory> categories = expenseCategoryService.findAllCategories();
@@ -70,6 +71,7 @@ public class ExpenseCategoryController {
         return new ResponseEntity<>(categoriesDto, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @PostMapping(value = "/new")
     public ResponseEntity<ExpenseCategoryReadDto> createCategory(@RequestBody ExpenseCategoryCreateDto categoryCreateDto) {
         if (categoryCreateDto == null) {
@@ -96,14 +98,13 @@ public class ExpenseCategoryController {
         return new ResponseEntity<>(categoryDto, HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @PatchMapping(value = "/update/{id}")
     public ResponseEntity<ExpenseCategoryReadDto> updateCategory(@PathVariable UUID id, @RequestBody ExpenseCategoryUpdateDto categoryUpdateDto) {
         Optional<ExpenseCategory> categoryOptional = expenseCategoryService.findCategoryById(id);
         if (categoryOptional.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
-
 
         ExpenseCategory existingCategory = categoryOptional.get();
         existingCategory.setName(categoryUpdateDto.getName());
@@ -120,6 +121,8 @@ public class ExpenseCategoryController {
 
         return new ResponseEntity<>(categoryDto, HttpStatus.OK);
     }
+
+    @CrossOrigin
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<ExpenseCategoryReadDto> deleteCategory(@PathVariable UUID id){
         Optional<ExpenseCategory> categoryOptional = expenseCategoryService.findCategoryById(id);

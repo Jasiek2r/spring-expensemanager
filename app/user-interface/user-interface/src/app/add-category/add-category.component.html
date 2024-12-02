@@ -1,1 +1,28 @@
-<p>add-category works!</p>
+<div class="add-category-wrapper">
+    <div class="add-category-form">
+        <h2>Add a New Category</h2>
+        <form (submit)="submitForm($event)">
+            <div>
+                <p>
+                    <label for="categoryName">Category Name</label>
+                </p>
+                <p>
+                    <input type="text" id="categoryName">
+                </p>
+                <p>
+                    <label for="categoryDescription">Category Description</label>
+                </p>
+                <p>
+                    <input type="text" id="categoryDescription">
+                </p>
+                <p>
+                    <label for="categoryBudget">Category Budget</label>
+                </p>
+                <p>
+                    <input type="number" id="categoryBudget">
+                </p>
+            </div>
+            <button type="submit">Add Category</button>
+        </form>
+    </div>
+</div>

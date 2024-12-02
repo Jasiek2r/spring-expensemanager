@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8963a58c-b108-432c-83cc-bea25332dc5b" name="Changes" comment="" />
+    <list default="true" id="8963a58c-b108-432c-83cc-bea25332dc5b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/ExpenseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-app/src/main/java/com/janek/app/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-app/src/main/java/com/janek/app/demo/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-app/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/add-category/add-category.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/add-category/add-category.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/add-category/add-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/add-category/add-category.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/add-category/add-category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/add-category/add-category.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/categories/categories.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/categories/categories.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/categories/categories.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/categories/categories.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/categories/categories.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/categories/categories.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/category-details/category-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/category-details/category-details.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/category-details/category-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/category-details/category-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/category-details/category-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/category-details/category-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/edit-category/edit-category.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/edit-category/edit-category.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/edit-category/edit-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/edit-category/edit-category.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/app/edit-category/edit-category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/app/edit-category/edit-category.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-interface/user-interface/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../user-interface/user-interface/src/styles.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +64,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AppApplication (1).executor&quot;: &quot;Run&quot;,
     &quot;Application.AppApplication.executor&quot;: &quot;Run&quot;,
     &quot;Application.DemoApplication.executor&quot;: &quot;Run&quot;,
     &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
@@ -62,6 +85,54 @@
       <recent name="com.janek.app.Entities.DTO" />
       <recent name="com.janek.app.Events" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.DemoApplication">
+    <configuration name="AppApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.janek.app.AppApplication" />
+      <module name="app (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.janek.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.janek.app.AppApplication" />
+      <module name="app" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.janek.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.janek.app.demo.DemoApplication" />
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.janek.app.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DemoApplication" />
+        <item itemvalue="Application.AppApplication (1)" />
+        <item itemvalue="Application.AppApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

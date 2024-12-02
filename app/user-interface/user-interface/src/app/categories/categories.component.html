@@ -1,14 +1,30 @@
 
 <div class="categories-wrapper">
-    <div *ngIf="categories.length > 0; else noCategories">
-        <ul>
-            <li *ngFor="let category of categories">
-            <span>{{ category.name }}</span> <!-- Display user-friendly category name -->
-            <button (click)="removeCategory(category.id)">Remove</button> <!-- Button to remove category -->
-            </li>
-        </ul>
+    <div *ngIf="categories.length > 0; else noCategories" class="categories-display">
+        <h1>Expense categories</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <td>
+                        {{ category.name }}
+                    </td>
+                    <td>
+                        <button (click)="removeCategory(category.id)" class="btn btn-danger">Remove</button>
+                        <button (click)="editCategory(category.id)" class="btn btn-warning">Edit</button>
+                        <button (click)="viewCategory(category.id)" class="btn btn-info">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="categories/add" class="link-button">Add a new category</a>
     </div>
-      
+    
     <ng-template #noCategories>
         <p>No categories available.</p>
     </ng-template>

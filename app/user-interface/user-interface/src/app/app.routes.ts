@@ -9,8 +9,18 @@ import { ElementDetailsComponent } from './element-details/element-details.compo
 
 export const routes: Routes = [
   { path: '', redirectTo: '/categories', pathMatch: 'full' },
-  { path: 'categories', component: CategoriesComponent },
-  { path: 'categories/add', component: AddCategoryComponent },
+  { 
+    path: 'categories', 
+    component: CategoriesComponent,
+    children: [
+      { 
+        path: 'add', 
+        component: AddCategoryComponent, 
+        outlet: 'addCategory' 
+      }
+    ]
+  },
+  { path: 'categories/add', pathMatch: 'full', component: AddCategoryComponent },
   { path: 'categories/edit/:id', component: EditCategoryComponent },
   { path: 'categories/:id', component: CategoryDetailsComponent },
   { path: 'categories/:id/add-element', component: AddElementComponent },

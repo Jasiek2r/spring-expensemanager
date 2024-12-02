@@ -1,1 +1,43 @@
-<p>edit-category works!</p>
+<div class="edit-category-wrapper">
+    <div class="edit-category-container">
+        <h2>Edit Category</h2>
+        <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="id">ID</label>
+                        </td>
+                        <td>
+                            <input id="id" type="text" formControlName="id" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td><input id="name" type="text" formControlName="name" /></td>
+                        <div *ngIf="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched">
+                            <small class="error">Name is required and must be at least 3 characters.</small>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label for="budget">Budget</label></td>
+                        <td><input id="budget" type="number" formControlName="budget" /></td>
+                        <div *ngIf="categoryForm.get('budget')?.invalid && categoryForm.get('budget')?.touched">
+                            <small class="error">Budget must be a positive number.</small>
+                        </div>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-warning" type="submit" [disabled]="categoryForm.invalid">Update Category</button>
+        </form>
+    </div>
+      
+    
+    
+</div>

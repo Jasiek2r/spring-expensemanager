@@ -1,0 +1,34 @@
+.category-details-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.category-details-container{
+    display:flex;
+    flex-direction: column;
+    background-image: linear-gradient(to top, rgba(3, 150, 96, 1), rgba(2, 100, 64, 1));
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: Tahoma;
+}
+table{
+    padding: 10px;
+}
+
+th{
+    padding-bottom: 15px;
+}
+
+td{
+    padding: 5px 10px;
+}
+
+.link-button{
+    text-decoration: none;
+    color:wheat;
+    transition: color 0.15s ease-in;
+}
+
+.link-button:hover{
+    color:burlywood;
+}

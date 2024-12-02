@@ -6,6 +6,13 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.reactive.CorsWebFilter;
+
+
+import java.util.Arrays;
+import java.util.Collections;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class DemoApplication {
@@ -25,6 +32,23 @@ public class DemoApplication {
 								.uri("http://localhost:8081"))
 				.build();
 	}
+	@Bean
+	public CorsWebFilter corsWebFilter() {
+
+		final CorsConfiguration corsConfig = new CorsConfiguration();
+		corsConfig.setAllowedOrigins(Collections.singletonList("*"));
+		corsConfig.setMaxAge(3600L);
+		corsConfig.setAllowedMethods(Arrays.asList("GET", "POST", "DELETE", "PUT", "PATCH", "OPTIONS"));
+		corsConfig.addAllowedHeader("*");
+
+		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		source.registerCorsConfiguration("/**", corsConfig);
+
+		return new CorsWebFilter(source);
+	}
+
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}

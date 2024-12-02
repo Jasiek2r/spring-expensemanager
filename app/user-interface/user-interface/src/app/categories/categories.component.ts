@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Import CommonModule
+import { AddCategoryComponent } from '../add-category/add-category.component';
+import { Router } from '@angular/router';
 
 interface Category {
   id: string;
@@ -20,7 +22,7 @@ interface CategoriesResponse {
 export class CategoriesComponent {
   categories: Category[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchCategories();
@@ -29,9 +31,7 @@ export class CategoriesComponent {
   fetchCategories(): void {
     this.http.get<CategoriesResponse>('http://localhost:8083/categories/').subscribe(
       (data) => {
-        console.log('Fetched categories:', data);  // Log the fetched data
         this.categories = data.expenseCategories;
-        console.log('Categories after update:', this.categories);
       },
       (error) => {
         console.error('Error fetching categories', error);
@@ -40,6 +40,26 @@ export class CategoriesComponent {
   }
 
   removeCategory(categoryId: string): void {
-    this.categories = this.categories.filter(category => category.id !== categoryId);
+    if(window.confirm('Are sure you want to delete this item ?')){
+      this.categories = this.categories.filter(category => category.id !== categoryId);
+    }
+    this.http.delete(`http://localhost:8083/categories/delete/${categoryId}`).subscribe(
+      () => {
+        console.log(`Category with id ${categoryId} deleted from backend`);
+      },
+      (error) => {
+        console.error('Error deleting category from backend', error);
+      }
+    );
   }
+  addNewCategory(): void{
+    this.router.navigate(['add']);
+  }
+  editCategory(categoryId: string) : void{
+    window.location.href = 'http://localhost:4200/categories/edit/'+categoryId;
+  }
+  viewCategory(categoryId: string) : void{
+    window.location.href = 'http://localhost:4200/categories/'+categoryId;
+  }
+  
 }
