@@ -1,1 +1,41 @@
-<p>edit-element works!</p>
+<div class="edit-element-wrapper">
+    <div class="edit-element-container">
+      <h2>Edit Element</h2>
+      <form [formGroup]="elementForm" (ngSubmit)="onSubmit()">
+        <table>
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><label for="id">ID</label></td>
+              <td><input id="id" type="text" formControlName="id" [readonly]="true" /></td>
+            </tr>
+            <tr>
+              <td><label for="name">Name</label></td>
+              <td><input id="name" type="text" formControlName="name" /></td>
+              <div *ngIf="elementForm.get('name')?.invalid && elementForm.get('name')?.touched">
+                <small class="error">Name is required and must be at least 3 characters.</small>
+              </div>
+            </tr>
+            <tr>
+              <td><label for="description">Description</label></td>
+              <td><input id="description" type="text" formControlName="description" /></td>
+            </tr>
+            <tr>
+              <td><label for="amount">Amount</label></td>
+              <td><input id="amount" type="number" formControlName="amount" /></td>
+              <div *ngIf="elementForm.get('amount')?.invalid && elementForm.get('amount')?.touched">
+                <small class="error">Amount must be a positive number.</small>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-warning" type="submit" [disabled]="elementForm.invalid">Update Element</button>
+      </form>
+    </div>
+  </div>
+  

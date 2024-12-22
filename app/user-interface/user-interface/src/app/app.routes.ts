@@ -21,9 +21,9 @@ export const routes: Routes = [
     ]
   },
   { path: 'categories/add', pathMatch: 'full', component: AddCategoryComponent },
-  { path: 'categories/edit/:id', component: EditCategoryComponent },
-  { path: 'categories/:id', component: CategoryDetailsComponent },
-  { path: 'categories/:id/add-element', component: AddElementComponent },
-  { path: 'categories/:id/edit-element/:elementId', component: EditElementComponent },
-  { path: 'categories/:id/elements/:elementId', component: ElementDetailsComponent },
+  { path: 'categories/edit/:id', component: EditCategoryComponent, data: {RenderMode: 'default'}},
+  { path: 'categories/:id', component: CategoryDetailsComponent, data: {RenderMode: 'default'}},
+  { path: 'categories/:id/add-element', component: AddElementComponent, data: {RenderMode: 'default'} },
+  { path: 'categories/:id/edit-element/:elementId', component: EditElementComponent, data: {RenderMode: 'default'} },
+  { path: 'categories/:id/elements/:elementId', component: ElementDetailsComponent, data: {RenderMode: 'default'} },
 ];

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
@@ -20,7 +20,7 @@ interface ExpenseList{
 @Component({
   selector: 'app-category-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './category-details.component.html',
   styleUrls: ['./category-details.component.css'],
 })
@@ -28,7 +28,7 @@ export class CategoryDetailsComponent implements OnInit {
   category: Category | null = null;
   expenses: Expense[] = [];
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {}
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -59,5 +59,11 @@ export class CategoryDetailsComponent implements OnInit {
         console.error('Error fetching category expenses', error);
       }
     )
+  }
+  viewExpense(expenseId: string): void{
+    this.router.navigate(['categories/'+this.category?.id+'/elements/'+expenseId]);
+  }
+  editExpense(expenseId: string):void{
+    this.router.navigate(['categories/'+this.category?.id+'/edit-element/'+expenseId]);
   }
 }

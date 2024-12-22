@@ -32,3 +32,43 @@ td{
 .link-button:hover{
     color:burlywood;
 }
+.btn.btn-warning:not(:disabled){
+    background-color: orange;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in;
+}
+
+.btn.btn-warning:not(:disabled):hover{
+    background-color: orangered;
+}
+.btn.btn-info:hover{
+    background-color: darkblue;
+}
+
+.btn.btn-danger{
+    background-color: red;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in;
+}
+.btn.btn-warning{
+    background-color: orange;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in;
+}
+.btn.btn-info{
+    background-color: blue;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in;
+}

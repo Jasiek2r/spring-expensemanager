@@ -74,7 +74,7 @@ export class EditCategoryComponent implements OnInit {
         console.error('Error updating category', error);
       }
     );
-    window.location.href = 'http://localhost:4200/categories';
+    this.router.navigate(['/categories']);
 
   }
 }

@@ -1,1 +1,32 @@
-<p>element-details works!</p>
+<div class="expense-details-wrapper">
+    <div class="expense-details-container" *ngIf="expense">
+      <h2>Expense Details</h2>
+  
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Amount</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ expense.name }}</td>
+            <td>{{ expense.description }}</td>
+            <td>{{ expense.amount | currency }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        <a routerLink="./../.." class="link-button">back to category</a>
+      </p>
+      <p>
+        <a routerLink="./edit" class="link-button">edit this expense</a>
+      </p>
+    </div>
+    <div *ngIf="!expense">
+      <p>Loading expense details...</p>
+    </div>
+  </div>
+  

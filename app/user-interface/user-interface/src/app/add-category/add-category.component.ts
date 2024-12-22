@@ -36,6 +36,6 @@ export class AddCategoryComponent {
         console.error('Error adding category:', error);
       }
     });
-    window.location.href = 'http://localhost:4200/categories';
+    this.router.navigate(['/categories']);
   }
 }

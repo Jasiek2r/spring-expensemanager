@@ -1,1 +1,28 @@
-<p>add-element works!</p>
+<div class="add-element-wrapper">
+    <div class="add-element-form">
+        <h2>Add a New Expense</h2>
+        <form (submit)="submitForm($event)">
+            <div>
+                <p>
+                    <label for="elementName">name</label>
+                </p>
+                <p>
+                    <input type="text" id="elementName">
+                </p>
+                <p>
+                    <label for="elementDescription">description</label>
+                </p>
+                <p>
+                    <input type="text" id="elementDescription">
+                </p>
+                <p>
+                    <label for="elementValue">amount</label>
+                </p>
+                <p>
+                    <input type="number" id="elementValue">
+                </p>
+            </div>
+            <button type="submit">Add Element</button>
+        </form>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Import CommonModule
 import { AddCategoryComponent } from '../add-category/add-category.component';
 import { Router } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 interface Category {
   id: string;
@@ -15,7 +16,7 @@ interface CategoriesResponse {
 
 @Component({
   selector: 'app-categories',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })
@@ -56,10 +57,10 @@ export class CategoriesComponent {
     this.router.navigate(['add']);
   }
   editCategory(categoryId: string) : void{
-    window.location.href = 'http://localhost:4200/categories/edit/'+categoryId;
+    this.router.navigate(['/categories/edit/'+categoryId]);
   }
   viewCategory(categoryId: string) : void{
-    window.location.href = 'http://localhost:4200/categories/'+categoryId;
+    this.router.navigate(['/categories/'+categoryId]);
   }
   
 }

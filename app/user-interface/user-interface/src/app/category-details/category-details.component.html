@@ -22,19 +22,26 @@
             <thead>
                 <tr>
                     <th>List of expenses</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let expense of expenses">
-                    <td>{{ expense.name }}</td>
+                    <td>
+                        {{ expense.name }}
+                    </td>
+                    <td>
+                        <button (click)="viewExpense(expense.id)" class="btn btn-info">View</button>
+                        <button (click)="editExpense(expense.id)" class="btn btn-warning">Edit</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
         <p>
-            <a href="http://localhost:4200/categories" class="link-button">back to all expense categories</a>
+            <a routerLink="./.." class="link-button">back to all expense categories</a>
         </p>
         <p>
-            <a href="http://localhost:4200/categories" class="link-button">add new expense</a>
+            <a routerLink="./add-element" class="link-button">add new expense</a>
         </p>
     </div>
     <div *ngIf="!category">
