@@ -68,6 +68,7 @@ export class EditCategoryComponent implements OnInit {
   updateCategory(category: Category): void {
     this.http.patch(`http://localhost:8083/categories/update/${category.id}`, category).subscribe(
       () => {
+        console.log(category)
         alert('Category updated successfully!');
       },
       (error) => {

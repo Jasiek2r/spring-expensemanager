@@ -1,0 +1,48 @@
+version: '3'
+services:
+  spring-expensemanager-elements:
+    image: spring-expensemanager-elements
+    restart: always
+    environment:
+      CATEGORY_MANAGEMENT_URL: "http://spring-expensemanager-categories:8080"
+    ports:
+      - "8080:8080"
+    networks:
+      - expense_manager_net
+
+  spring-expensemanager-categories:
+    image: spring-expensemanager-categories
+    restart: always
+    environment:
+      EXPENSE_MANAGEMENT_URL: "http://spring-expensemanager-elements:8080"
+    ports:
+      - "8081:8080"
+    depends_on:
+      - spring-expensemanager-elements
+    networks:
+      - expense_manager_net
+
+  spring-expensemanager-ui:
+    image: spring-expensemanager-ui
+    restart: always
+    environment:
+      API_URL: "http://spring-expensemanager-gateway:8080/categories"
+    ports:
+      - "8082:80"
+    networks:
+      - expense_manager_net
+
+  spring-expensemanager-gateway:
+    image: spring-expensemanager-gateway
+    restart: always
+    environment:
+      CATEGORY_MANAGEMENT_URL: "http://spring-expensemanager-categories:8080"
+      EXPENSE_MANAGEMENT_URL: "http://spring-expensemanager-expenses:8080"
+    ports:
+      - "8083:8080"
+    networks:
+      - expense_manager_net
+
+networks:
+  expense_manager_net:
+    driver: bridge

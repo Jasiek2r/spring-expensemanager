@@ -1,5 +1,6 @@
 package com.janek.app.demo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -17,19 +18,27 @@ import java.util.Collections;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class DemoApplication {
 
+	@Value("${expense.management.url}")
+	private String expensesUri;
+
+	@Value("${category.management.url}")
+	private String categoriesUri = "http://localhost:8081";
+
+
 	@Bean
+
 	public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
 				// Route to Expenses Microservice
 				.route("expenses",
 						r -> r.path("/expenses/**")  // Match all requests starting with /expenses
 								.filters(f -> f.rewritePath("/expenses/(?<segment>.*)", "/api/expense-manager/expenses/${segment}"))  // Rewrite to the correct microservice path
-								.uri("http://localhost:8080"))  // Forward to the microservice
+								.uri(expensesUri))  // Forward to the microservice
 				// Route to Categories Microservice
 				.route("categories",
 						r -> r.path("/categories/**")
 								.filters(f -> f.rewritePath("/categories/(?<segment>.*)", "/api/expense-manager/categories/${segment}"))
-								.uri("http://localhost:8081"))
+								.uri(categoriesUri))
 				.build();
 	}
 	@Bean

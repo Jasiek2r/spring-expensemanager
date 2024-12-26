@@ -21,9 +21,11 @@ RUN npm run build
 # Use official nginx image as the base image
 FROM nginx:latest
 
+ENV API_URL http://localhost:8083
+
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/user-interface/browser /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx
+COPY ./nginx.conf.template /etc/nginx/templates/nginx.conf.template
 
 # Expose port 80
 EXPOSE 80

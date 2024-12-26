@@ -8,6 +8,7 @@ import com.janek.app.Services.ExpenseCategoryService;
 import com.janek.app.Services.ExpenseService;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,7 +32,8 @@ public class EventController {
 
     private final RestTemplate restTemplate;
 
-    private String categoryManagementUrl = "http://localhost:8081/api/expense-manager/events";
+    @Value("${category.management.url}")
+    private String categoryManagementUrl;
 
     public EventController(ExpenseCategoryService expenseCategoryService, RestTemplate restTemplate){
         this.expenseCategoryService = expenseCategoryService;
@@ -55,6 +57,7 @@ public class EventController {
 
     @PostMapping("/handle-initialization-event")
     public ResponseEntity<Void> handleInitializationEvent(@RequestBody InitializationEvent event){
+        System.out.println("initialization event hit");
         // fetch categories
         List<ExpenseCategory> expenseCategoryList = new ArrayList<>();
         expenseCategoryList = expenseCategoryService.findAllCategories();
@@ -76,6 +79,7 @@ public class EventController {
                 .expenseCategories(expenseCategoryList)
                 .build();
         // send categories back on request
-        restTemplate.postForEntity(categoryManagementUrl + "/handle-initialization-event", initializationEvent, Void.class);
+        System.out.println("sending back categories");
+        restTemplate.postForEntity(categoryManagementUrl + "/api/expense-manager/events//handle-initialization-event", initializationEvent, Void.class);
     }
 }

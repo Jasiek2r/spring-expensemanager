@@ -6,6 +6,7 @@ import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Events.InitializationEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -24,7 +25,8 @@ public class DataInitializer implements CommandLineRunner {
 
     @Autowired
     private ExpenseCategoryService categoryService;
-    private final String expenseManagementUrl = "http://localhost:8080/api/expense-manager/events"; // Target application URL
+    @Value("${expense.management.url}")
+    private String expenseManagementUrl; // Target application URL
     private final RestTemplate restTemplate;
 
     public DataInitializer(RestTemplate restTemplate) {
@@ -47,6 +49,9 @@ public class DataInitializer implements CommandLineRunner {
     private void sendInitializationEvent(){
         InitializationEvent initializationEvent = new InitializationEvent();
         // Send POST request to the elements management application
-        restTemplate.postForEntity(expenseManagementUrl + "/handle-initialization-event", initializationEvent, Void.class);
+        String url = expenseManagementUrl + "/api/expense-manager/events/handle-initialization-event";
+        System.out.println("Sending to " +url);
+        restTemplate.postForEntity(url, initializationEvent, Void.class);
+        System.out.println("Sent initialization event to " + url);
     }
 }
