@@ -19,7 +19,7 @@ RUN npm run build
 # Stage 2: Serve app with nginx server
 
 # Use official nginx image as the base image
-FROM nginx:latest
+FROM nginx:1.27.3
 
 ENV API_URL http://localhost:8083
 

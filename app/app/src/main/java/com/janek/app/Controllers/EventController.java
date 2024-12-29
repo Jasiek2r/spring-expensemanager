@@ -80,6 +80,6 @@ public class EventController {
                 .build();
         // send categories back on request
         System.out.println("sending back categories");
-        restTemplate.postForEntity(categoryManagementUrl + "/api/expense-manager/events//handle-initialization-event", initializationEvent, Void.class);
+        restTemplate.postForEntity(categoryManagementUrl + "/api/expense-manager/events/handle-initialization-event", initializationEvent, Void.class);
     }
 }

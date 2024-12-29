@@ -9,6 +9,7 @@ import com.janek.app.Entities.ExpenseCategory;
 import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +28,9 @@ public class ExpenseCategoryController {
     private ExpenseCategoryService expenseCategoryService;
 
     private final RestTemplate restTemplate;
-    private final String expenseManagementUrl = "http://localhost:8080/api/expense-manager/events"; // Target application URL
+
+    @Value("${expense.management.url}")
+    private String expenseManagementUrl; // Target application URL
 
     public ExpenseCategoryController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -137,7 +140,11 @@ public class ExpenseCategoryController {
         categoryEvent.setAction(action);
         categoryEvent.setExpenseCategoryId(expenseCategoryUUID);
 
+        String uri = expenseManagementUrl + "/api/expense-manager/events/handle-category-event";
+
+        System.out.println("sending category event to " + uri);
+
         // Send POST request to the elements management application
-        restTemplate.postForEntity(expenseManagementUrl + "/handle-category-event", categoryEvent, Void.class);
+        restTemplate.postForEntity(uri, categoryEvent, Void.class);
     }
 }

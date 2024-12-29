@@ -22,7 +22,7 @@ public class DemoApplication {
 	private String expensesUri;
 
 	@Value("${category.management.url}")
-	private String categoriesUri = "http://localhost:8081";
+	private String categoriesUri;
 
 
 	@Bean

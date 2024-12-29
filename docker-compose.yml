@@ -5,6 +5,14 @@ services:
     restart: always
     environment:
       CATEGORY_MANAGEMENT_URL: "http://spring-expensemanager-categories:8080"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/expense-manager
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+      SPRING_H2_CONSOLE_ENABLED: false
+      SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
     ports:
       - "8080:8080"
     networks:
@@ -15,6 +23,14 @@ services:
     restart: always
     environment:
       EXPENSE_MANAGEMENT_URL: "http://spring-expensemanager-elements:8080"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db2:5432/category-manager
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+      SPRING_H2_CONSOLE_ENABLED: false
+      SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
     ports:
       - "8081:8080"
     depends_on:
@@ -37,12 +53,42 @@ services:
     restart: always
     environment:
       CATEGORY_MANAGEMENT_URL: "http://spring-expensemanager-categories:8080"
-      EXPENSE_MANAGEMENT_URL: "http://spring-expensemanager-expenses:8080"
+      EXPENSE_MANAGEMENT_URL: "http://spring-expensemanager-elements:8080"
     ports:
       - "8083:8080"
     networks:
       - expense_manager_net
+  db:
+    image: postgres:latest
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: expense-manager
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - expense_manager_net
+    ports:
+      - "5432:5432"
+  db2:
+    image: postgres:latest
+    container_name: postgres-db2
+    environment:
+      POSTGRES_DB: category-manager
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init2.sql
+    networks:
+      - expense_manager_net
+    ports:
+      - "5433:5432"
 
 networks:
   expense_manager_net:
     driver: bridge
+
+volumes:
+  db_data:
+    driver: local
