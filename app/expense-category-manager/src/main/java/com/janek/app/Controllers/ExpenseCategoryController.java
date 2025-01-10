@@ -9,14 +9,13 @@ import com.janek.app.Entities.ExpenseCategory;
 import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -30,7 +29,7 @@ public class ExpenseCategoryController {
     private ExpenseCategoryService expenseCategoryService;
 
     @Autowired
-    private DiscoveryClient discoveryClient;
+    private LoadBalancerClient loadBalancerClient;
 
     private final RestTemplate restTemplate;
 
@@ -141,13 +140,9 @@ public class ExpenseCategoryController {
         CategoryEvent categoryEvent = new CategoryEvent();
         categoryEvent.setAction(action);
         categoryEvent.setExpenseCategoryId(expenseCategoryUUID);
-        String expenseManagementUri = discoveryClient
-                .getInstances("expense-manager")
-                .stream()
-                .findFirst()
-                .orElseThrow()
-                .getUri()
-                .toString();
+        String expenseManagementUri = loadBalancerClient
+                .choose("expense-manager")
+                .getUri().toString();
         String uri = expenseManagementUri + "/api/expense-manager/events/handle-category-event";
 
         System.out.println("sending category event to " + uri);

@@ -5,40 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8963a58c-b108-432c-83cc-bea25332dc5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../eureka/eureka/src/test/java/com/janek/app/AppApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway-app/src/main/java/com/janek/app/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-app/src/main/java/com/janek/app/demo/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-app/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
