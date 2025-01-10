@@ -6,10 +6,8 @@ import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Events.InitializationEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import com.janek.app.Services.ExpenseService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +30,7 @@ public class EventController {
     private ExpenseCategoryService expenseCategoryService;
 
     @Autowired
-    private DiscoveryClient discoveryClient;
+    private LoadBalancerClient loadBalancerClient;
 
     private final RestTemplate restTemplate;
 
@@ -82,13 +80,9 @@ public class EventController {
                 .build();
         // send categories back on request
         System.out.println("sending back categories");
-        String categoryManagementUri = discoveryClient
-                .getInstances("expense-category-manager")
-                .stream()
-                .findFirst()
-                .orElseThrow()
-                .getUri()
-                .toString();
+        String categoryManagementUri = loadBalancerClient
+                .choose("expense-category-manager")
+                .getUri().toString();
 
         System.out.println(categoryManagementUri);
 
