@@ -10,6 +10,7 @@ import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,13 +25,14 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("api/expense-manager/categories")
 public class ExpenseCategoryController {
+
     @Autowired
     private ExpenseCategoryService expenseCategoryService;
 
-    private final RestTemplate restTemplate;
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
-    @Value("${expense.management.url}")
-    private String expenseManagementUrl; // Target application URL
+    private final RestTemplate restTemplate;
 
     public ExpenseCategoryController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -139,8 +141,14 @@ public class ExpenseCategoryController {
         CategoryEvent categoryEvent = new CategoryEvent();
         categoryEvent.setAction(action);
         categoryEvent.setExpenseCategoryId(expenseCategoryUUID);
-
-        String uri = expenseManagementUrl + "/api/expense-manager/events/handle-category-event";
+        String expenseManagementUri = discoveryClient
+                .getInstances("expense-manager")
+                .stream()
+                .findFirst()
+                .orElseThrow()
+                .getUri()
+                .toString();
+        String uri = expenseManagementUri + "/api/expense-manager/events/handle-category-event";
 
         System.out.println("sending category event to " + uri);
 

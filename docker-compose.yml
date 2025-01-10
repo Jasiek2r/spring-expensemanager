@@ -1,5 +1,9 @@
 version: '3'
 services:
+  spring-eureka:
+    image: spring-eureka
+    restart: always
+    
   spring-expensemanager-elements:
     image: spring-expensemanager-elements
     restart: always

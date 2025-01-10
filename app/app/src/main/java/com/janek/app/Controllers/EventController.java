@@ -9,6 +9,7 @@ import com.janek.app.Services.ExpenseService;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,10 +31,11 @@ public class EventController {
     @Autowired
     private ExpenseCategoryService expenseCategoryService;
 
+    @Autowired
+    private DiscoveryClient discoveryClient;
+
     private final RestTemplate restTemplate;
 
-    @Value("${category.management.url}")
-    private String categoryManagementUrl;
 
     public EventController(ExpenseCategoryService expenseCategoryService, RestTemplate restTemplate){
         this.expenseCategoryService = expenseCategoryService;
@@ -80,6 +82,16 @@ public class EventController {
                 .build();
         // send categories back on request
         System.out.println("sending back categories");
-        restTemplate.postForEntity(categoryManagementUrl + "/api/expense-manager/events/handle-initialization-event", initializationEvent, Void.class);
+        String categoryManagementUri = discoveryClient
+                .getInstances("expense-category-manager")
+                .stream()
+                .findFirst()
+                .orElseThrow()
+                .getUri()
+                .toString();
+
+        System.out.println(categoryManagementUri);
+
+        restTemplate.postForEntity(categoryManagementUri + "/api/expense-manager/events/handle-initialization-event", initializationEvent, Void.class);
     }
 }

@@ -20,9 +20,11 @@ import java.util.stream.Collectors;
 public class EventController {
     @Autowired
     private ExpenseCategoryService categoryService;
+
     public EventController(ExpenseCategoryService categoryService){
         this.categoryService = categoryService;
     }
+
     @PostMapping("/handle-initialization-event")
     public ResponseEntity<Void> handleInitializationEvent(@RequestBody InitializationEvent event){
 
