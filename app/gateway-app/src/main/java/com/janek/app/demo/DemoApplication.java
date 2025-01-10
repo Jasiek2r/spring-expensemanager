@@ -36,7 +36,6 @@ public class DemoApplication {
 	@Value("${category.management.url}")
 	private String categoriesUri;
 
-
 	@Bean
 	public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 		return builder.routes()

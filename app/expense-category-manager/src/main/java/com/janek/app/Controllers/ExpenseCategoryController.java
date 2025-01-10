@@ -8,8 +8,8 @@ import com.janek.app.Entities.DTO.ListReadDto.ExpenseCategoryListItemDto;
 import com.janek.app.Entities.ExpenseCategory;
 import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
+import com.janek.app.Utils.ExpenseCategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +30,9 @@ public class ExpenseCategoryController {
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+
+    @Autowired
+    private ExpenseCategoryMapper expenseCategoryMapper;
 
     private final RestTemplate restTemplate;
 
@@ -60,10 +63,7 @@ public class ExpenseCategoryController {
     public ResponseEntity<ExpenseCategoriesDto> getAllCategories() {
         List<ExpenseCategory> categories = expenseCategoryService.findAllCategories();
         List<ExpenseCategoryListItemDto> categoryDtos = categories.stream()
-                .map(category -> ExpenseCategoryListItemDto.builder()
-                        .id(category.getId())
-                        .name(category.getName())
-                        .build())
+                .map(expenseCategoryMapper::mapToExpenseCategoryListItemDto)
                 .collect(Collectors.toList());
 
         ExpenseCategoriesDto categoriesDto = ExpenseCategoriesDto.builder()
@@ -87,11 +87,7 @@ public class ExpenseCategoryController {
 
         ExpenseCategory savedCategory = expenseCategoryService.saveCategory(newCategory);
 
-        ExpenseCategoryReadDto categoryDto = ExpenseCategoryReadDto.builder()
-                .id(savedCategory.getId())
-                .name(savedCategory.getName())
-                .description(savedCategory.getDescription())
-                .build();
+        ExpenseCategoryReadDto categoryDto = expenseCategoryMapper.mapToExpenseCategoryReadDto(savedCategory);
 
         // send event to the expense management application
         sendCategoryEvent("ADD",savedCategory.getId());
@@ -112,12 +108,7 @@ public class ExpenseCategoryController {
 
         ExpenseCategory updatedCategory = expenseCategoryService.saveCategory(existingCategory);
 
-        ExpenseCategoryReadDto categoryDto = ExpenseCategoryReadDto.builder()
-                .id(updatedCategory.getId())
-                .name(updatedCategory.getName())
-                .description(updatedCategory.getDescription())
-                .budget(updatedCategory.getBudget())
-                .build();
+        ExpenseCategoryReadDto categoryDto = expenseCategoryMapper.mapToExpenseCategoryReadDto(updatedCategory);
 
         return new ResponseEntity<>(categoryDto, HttpStatus.OK);
     }

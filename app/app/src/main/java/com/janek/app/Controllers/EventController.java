@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -34,24 +33,25 @@ public class EventController {
 
     private final RestTemplate restTemplate;
 
-
-    public EventController(ExpenseCategoryService expenseCategoryService, RestTemplate restTemplate){
-        this.expenseCategoryService = expenseCategoryService;
+    public EventController(RestTemplate restTemplate){
         this.restTemplate = restTemplate;
     }
 
     @PostMapping("/handle-category-event")
     public ResponseEntity<Void> handleCategoryEvent(@RequestBody CategoryEvent event) {
-        if ("ADD".equals(event.getAction())) {
-            UUID categoryId = event.getExpenseCategoryId();
-            ExpenseCategory newExpenseCategory = ExpenseCategory.builder()
-                    .id(categoryId)
-                    .build();
-            expenseCategoryService.saveCategory(newExpenseCategory);
-        } else if ("REMOVE".equals(event.getAction())) {
-            UUID categoryId = event.getExpenseCategoryId();
-            expenseCategoryService.deleteCategory(categoryId);
+        String eventAction = event.getAction();
+        UUID categoryId = event.getExpenseCategoryId();
+        switch(eventAction){
+            case "ADD":
+                ExpenseCategory newExpenseCategory = ExpenseCategory.builder()
+                        .id(categoryId)
+                        .build();
+                break;
+            case "REMOVE":
+                expenseCategoryService.deleteCategory(categoryId);
+                break;
         }
+
         return ResponseEntity.ok().build();
     }
 
@@ -59,8 +59,7 @@ public class EventController {
     public ResponseEntity<Void> handleInitializationEvent(@RequestBody InitializationEvent event){
         System.out.println("initialization event hit");
         // fetch categories
-        List<ExpenseCategory> expenseCategoryList = new ArrayList<>();
-        expenseCategoryList = expenseCategoryService.findAllCategories();
+        List<ExpenseCategory> expenseCategoryList = expenseCategoryService.findAllCategories();
         List<ExpenseCategoryReadDto> expenseCategoryListDto = expenseCategoryList.stream().map(
                 element -> ExpenseCategoryReadDto.builder()
                         .id(element.getId())
@@ -84,7 +83,7 @@ public class EventController {
                 .choose("expense-category-manager")
                 .getUri().toString();
 
-        System.out.println(categoryManagementUri);
+        System.out.println("sending to " + categoryManagementUri);
 
         restTemplate.postForEntity(categoryManagementUri + "/api/expense-manager/events/handle-initialization-event", initializationEvent, Void.class);
     }

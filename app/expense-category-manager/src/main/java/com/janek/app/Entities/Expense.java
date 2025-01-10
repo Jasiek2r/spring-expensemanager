@@ -40,28 +40,6 @@ public class Expense implements Serializable{
 
     }
 
-    private static Comparator<Expense> byHashComparator = new Comparator<Expense>() {
-            @Override
-            public int compare(Expense o1, Expense o2) {
-                return Integer.compare(o1.hashCode(), o2.hashCode());
-            };
-    };
-    
-    private static Comparator<Expense> byNaturalOrderComparator = new Comparator<Expense>() {
-        @Override
-        public int compare(Expense o1, Expense o2) {
-            return o1.getName().compareTo(o2.getName());
-        }
-    };
-
-    public int compareByHash(Expense o1, Expense o2) {
-        return this.byHashComparator.compare(o1, o2);
-    }
-
-    public int compareByNaturalOrder(Expense o1, Expense o2) {
-        return this.byNaturalOrderComparator.compare(o1, o2);
-    }
-
     @Override
     public String toString() {
         return "Expense{" +

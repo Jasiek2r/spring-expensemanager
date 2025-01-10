@@ -24,19 +24,6 @@ public class ExpenseCategory implements Serializable{
     @Column(name = "budget", nullable = false)
     private double budget;
 
-    private static Comparator<ExpenseCategory> byHashComparator = new Comparator<ExpenseCategory>() {
-        @Override
-        public int compare(ExpenseCategory o1, ExpenseCategory o2) {
-            return Integer.compare(o1.hashCode(), o2.hashCode());
-        }
-    };
-    private static Comparator<ExpenseCategory> byNaturalOrderComparator = new Comparator<ExpenseCategory>() {
-        @Override
-        public int compare(ExpenseCategory o1, ExpenseCategory o2) {
-            return o1.getName().compareTo(o2.getName());
-        }
-    };
-
     public ExpenseCategory(UUID id, String name, String description, double budget){
         this.id = id;
         this.name = name;
@@ -45,18 +32,6 @@ public class ExpenseCategory implements Serializable{
     }
     public ExpenseCategory(){
 
-    }
-
-    public void addExpense(Expense expense) {
-        expense.setCategory(this);
-    }
-
-    public int compareByHash(ExpenseCategory o1, ExpenseCategory o2) {
-        return this.byHashComparator.compare(o1, o2);
-    }
-
-    public int compareByNaturalOrder(ExpenseCategory o1, ExpenseCategory o2) {
-        return this.byNaturalOrderComparator.compare(o1, o2);
     }
 
     @Override

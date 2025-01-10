@@ -4,8 +4,8 @@ package com.janek.app.Controllers;
 import com.janek.app.Entities.DTO.ListReadDto.ExpenseListItemDto;
 import com.janek.app.Entities.DTO.ListReadDto.ExpensesReadDto;
 import com.janek.app.Entities.ExpenseCategory;
-import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
+import com.janek.app.Utils.ExpenseMapper;
 import org.springframework.web.bind.annotation.RestController;
 import com.janek.app.Entities.DTO.ExpenseCreateDto;
 import com.janek.app.Entities.DTO.ExpenseReadDto;
@@ -24,13 +24,20 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("api/expense-manager/expenses")
 public class ExpenseController {
+
     @Autowired
     private ExpenseService expenseService;
 
     @Autowired
     private ExpenseCategoryService expenseCategoryService;
 
+    private ExpenseMapper expenseMapper;
 
+    public ExpenseController(ExpenseMapper expenseMapper){
+        this.expenseMapper = expenseMapper;
+    }
+
+    //Fetches an expense given its id
     @GetMapping(value = "/{id}")
     public ResponseEntity<ExpenseReadDto> getExpense(@PathVariable("id") UUID id){
         Optional<Expense> serverResponse = expenseService.findExpenseById(id);
@@ -40,27 +47,17 @@ public class ExpenseController {
         }
         //otherwise return a DTO object
         Expense fetchedExpense = serverResponse.get();
-        ExpenseReadDto expenseDto = ExpenseReadDto.
-                builder()
-                    .id(fetchedExpense.getId())
-                    .name(fetchedExpense.getName())
-                    .description(fetchedExpense.getDescription())
-                    .amount(fetchedExpense.getAmount())
-                    .categoryId(fetchedExpense.getCategory().getId())
-                .build();
+        ExpenseReadDto expenseDto = expenseMapper.mapToExpenseReadDto(fetchedExpense);
 
         return new ResponseEntity<>(expenseDto, HttpStatus.OK);
     }
 
-
+    //Fetches all expenses
     @GetMapping(value = "/")
     public ResponseEntity<ExpensesReadDto> getAllExpenses() {
         List<Expense> expenses = expenseService.findAllExpenses();
         List<ExpenseListItemDto> expenseDtos = expenses.stream()
-                .map(expense -> ExpenseListItemDto.builder()
-                        .id(expense.getId())
-                        .name(expense.getName())
-                        .build())
+                .map(expenseMapper::mapToExpenseListItemDto)
                 .collect(Collectors.toList());
 
         ExpensesReadDto expensesReadDto = ExpensesReadDto.builder()
@@ -70,7 +67,7 @@ public class ExpenseController {
         return new ResponseEntity<>(expensesReadDto, HttpStatus.OK);
     }
 
-
+    //Fetches all expenses that belong to a category with the provided categoryId
     @GetMapping(value = "/category/{id}")
     public ResponseEntity<ExpensesReadDto> getExpensesByCategory(@PathVariable UUID id){
         // Fetch a category if it is possible
@@ -83,10 +80,7 @@ public class ExpenseController {
         ExpenseCategory requestedCategory = requestedCategoryResult.get();
         List<Expense> expenses = expenseService.findExpensesByCategory(requestedCategory);
         List<ExpenseListItemDto> expenseDtos = expenses.stream()
-                .map(expense -> ExpenseListItemDto.builder()
-                        .id(expense.getId())
-                        .name(expense.getName())
-                        .build())
+                .map(expenseMapper::mapToExpenseListItemDto)
                 .collect(Collectors.toList());
 
         ExpensesReadDto expensesReadDto = ExpensesReadDto.builder()
@@ -95,7 +89,7 @@ public class ExpenseController {
         return new ResponseEntity<>(expensesReadDto, HttpStatus.OK);
     }
 
-
+    //creates a new expense
     @PostMapping(value = "/new")  // Corrected the mapping to use POST for creating a new expense
     public ResponseEntity<ExpenseReadDto> createExpense(@RequestBody ExpenseCreateDto expenseCreateDto) {
         // Validate the incoming DTO
@@ -123,17 +117,12 @@ public class ExpenseController {
         Expense savedExpense = expenseService.saveExpense(newExpense);
 
         // Map the saved entity to a DTO
-        ExpenseReadDto expenseDto = ExpenseReadDto.builder()
-                .id(savedExpense.getId())
-                .name(savedExpense.getName())
-                .description(savedExpense.getDescription())
-                .amount(savedExpense.getAmount())
-                .categoryId(savedExpense.getCategory().getId())
-                .build();
+        ExpenseReadDto expenseDto = expenseMapper.mapToExpenseReadDto(savedExpense);
 
         return new ResponseEntity<>(expenseDto, HttpStatus.CREATED); // 201 CREATED
     }
 
+    //updates an expense with a given id
     @PatchMapping(value = "/update/{id}")
     public ResponseEntity<ExpenseReadDto> updateExpense(@PathVariable UUID id, @RequestBody ExpenseCreateDto expenseUpdateDto) {
         // Fetch the existing expense by ID
@@ -163,17 +152,12 @@ public class ExpenseController {
         Expense updatedExpense = expenseService.saveExpense(existingExpense);
 
         // Map the updated entity to a DTO
-        ExpenseReadDto expenseDto = ExpenseReadDto.builder()
-                .id(updatedExpense.getId())
-                .name(updatedExpense.getName())
-                .description(updatedExpense.getDescription())
-                .amount(updatedExpense.getAmount())
-                .categoryId(updatedExpense.getCategory().getId())
-                .build();
+        ExpenseReadDto expenseDto = expenseMapper.mapToExpenseReadDto(updatedExpense);
 
         return new ResponseEntity<>(expenseDto, HttpStatus.OK); // 200 OK
     }
 
+    //deletes an expense with a given id
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<ExpenseReadDto> deleteExpense(@PathVariable UUID id){
         Optional<Expense> existingExpenseOptional = expenseService.findExpenseById(id);
