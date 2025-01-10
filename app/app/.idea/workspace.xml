@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8963a58c-b108-432c-83cc-bea25332dc5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Utils/ExpenseMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Utils/ExpenseCategoryMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/ExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/ExpenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/Expense.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/Expense.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Utils/ExpenseCategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Utils/ExpenseCategoryMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,8 +127,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AppApplication" />
         <item itemvalue="Application.DemoApplication (1)" />
+        <item itemvalue="Application.AppApplication" />
         <item itemvalue="Application.DemoApplication" />
       </list>
     </recent_temporary>

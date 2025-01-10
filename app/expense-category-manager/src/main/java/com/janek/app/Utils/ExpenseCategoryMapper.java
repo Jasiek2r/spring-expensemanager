@@ -12,8 +12,7 @@ public class ExpenseCategoryMapper {
                 .id(expenseCategory.getId())
                 .name(expenseCategory.getName())
                 .description(expenseCategory.getDescription())
-                .amount(expenseCategory.getAmount())
-                .categoryId(expenseCategory.getCategory().getId())
+                .budget(expenseCategory.getBudget())
                 .build();
     }
 
