@@ -12,6 +12,7 @@ import java.io.Serializable;
 
 @Builder
 @Entity
+@Table(name="categories")
 @Getter @Setter
 public class ExpenseCategory implements Serializable{
     @Id

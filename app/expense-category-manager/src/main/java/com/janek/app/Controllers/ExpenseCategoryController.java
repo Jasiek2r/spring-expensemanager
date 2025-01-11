@@ -10,6 +10,7 @@ import com.janek.app.Events.CategoryEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import com.janek.app.Utils.ExpenseCategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,9 @@ public class ExpenseCategoryController {
     private ExpenseCategoryMapper expenseCategoryMapper;
 
     private final RestTemplate restTemplate;
+
+    @Value("${expense.manager.name}")
+    private String expenseManagerName;
 
     public ExpenseCategoryController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -132,7 +136,7 @@ public class ExpenseCategoryController {
         categoryEvent.setAction(action);
         categoryEvent.setExpenseCategoryId(expenseCategoryUUID);
         String expenseManagementUri = loadBalancerClient
-                .choose("expense-manager")
+                .choose(expenseManagerName)
                 .getUri().toString();
         String uri = expenseManagementUri + "/api/expense-manager/events/handle-category-event";
 

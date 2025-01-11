@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="1" author="janek">
+        <createTable tableName="categories">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true" primaryKeyName="categories__PK"/>
+            </column>
+            <column name="name" type="VARCHAR(1024)"/>
+            <column name="description" type="VARCHAR(1024)"/>
+            <column name="budget" type="INTEGER"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

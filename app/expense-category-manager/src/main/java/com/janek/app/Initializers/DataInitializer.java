@@ -3,6 +3,7 @@ package com.janek.app.Initializers;
 import com.janek.app.Events.InitializationEvent;
 import com.janek.app.Services.ExpenseCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.core.annotation.Order;
@@ -24,6 +25,9 @@ public class DataInitializer implements CommandLineRunner {
 
     private final RestTemplate restTemplate;
 
+    @Value("${expense.manager.name}")
+    private String expenseManagerName;
+
     public DataInitializer(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
         System.out.println("DataInitializer bean created.");
@@ -41,12 +45,31 @@ public class DataInitializer implements CommandLineRunner {
         }
 
     }
-    private void sendInitializationEvent(){
+    private void sendInitializationEvent() {
         InitializationEvent initializationEvent = new InitializationEvent();
+
+        String expenseManagementUri = "";
+
         // Send POST request to the elements management application
-        String expenseManagementUri = loadBalancerClient
-                .choose("expense-manager")
-                .getUri().toString();
+        while(true){
+            try{
+                expenseManagementUri = loadBalancerClient
+                        .choose(expenseManagerName)
+                        .getUri().toString();
+
+            }catch(Exception e){
+                System.out.println("Initialization failed, retrying");
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+                continue;
+            }
+            break;
+        }
+
+
         String url = expenseManagementUri + "/api/expense-manager/events/handle-initialization-event";
         System.out.println("Sending to " +url);
         restTemplate.postForEntity(url, initializationEvent, Void.class);

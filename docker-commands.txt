@@ -3,7 +3,7 @@ docker build --no-cache -t spring-expensemanager-ui .
 docker run -e API_URL=http://localhost:8083 -d -p 4200:80 spring-expensemanager-ui
 
 Categories
-docker build -t spring-expensemanager-categories .
+docker build --no-cache -t spring-expensemanager-categories .
 docker run -d -p 8083:8080 spring-expensemanager-categories
 
 Expenses
@@ -13,3 +13,7 @@ docker run -d -p 8080:8080 spring-expensemanager-elements
 Gateway
 docker build --no-cache -t spring-expensemanager-gateway .
 docker run -d -p 8083:8080 spring-expensemanager-gateway
+
+Eureka
+docker build --no-cache -t spring-eureka .
+docker run -d -p 8761:8080 spring-eureka

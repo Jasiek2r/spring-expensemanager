@@ -73,6 +73,12 @@
 			<groupId>com.netflix.eureka</groupId>
 			<artifactId>eureka-core</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.liquibase/liquibase-core -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+			<version>4.30.0</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>

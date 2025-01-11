@@ -5,7 +5,7 @@ FROM eclipse-temurin:17-jdk-focal
 WORKDIR /app
 
 # Copy the Spring Boot jar file into the container
-COPY target/app-0.0.1-SNAPSHOT.jar /app/app-0.0.1-SNAPSHOT.jar
+COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo-0.0.1-SNAPSHOT.jar
 
 # Set environment variables for Spring Boot configuration
 ENV SPRING_PROFILES_ACTIVE=prod
@@ -15,4 +15,4 @@ ENV SERVER_PORT=8080
 EXPOSE 8080
 
 # Command to run the Spring Boot application
-CMD ["java", "-jar", "app-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "demo-0.0.1-SNAPSHOT.jar"]
