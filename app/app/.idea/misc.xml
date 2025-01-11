@@ -10,12 +10,16 @@
         <option value="$PROJECT_DIR$/../gateway-app/pom.xml" />
         <option value="$PROJECT_DIR$/../eureka/eureka/pom.xml" />
         <option value="$PROJECT_DIR$/../expensemanager-eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/../expensemanager-config/demo/pom.xml" />
+        <option value="$PROJECT_DIR$/../expensemanager-config/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/../expensemanager-config/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/spring-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/../eureka/eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/../expensemanager-config/demo/pom.xml" />
         <option value="$PROJECT_DIR$/../spring-gateway/pom.xml" />
       </set>
     </option>

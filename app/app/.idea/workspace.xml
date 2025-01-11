@@ -5,46 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8963a58c-b108-432c-83cc-bea25332dc5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/01-create-expenses.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/02-create-categories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/liquibase/master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/liquibase/02-create-categories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/liquibase/master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/configuration/expense-category-manager.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/configuration/expense-manager.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/main/resources/configuration/gateway.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/AppApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Controllers/ExpenseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/DTO/ExpenseCategoryReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/DTO/ExpenseCreateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/DTO/ExpenseReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/DTO/ExpenseUpdateDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpenseListItemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/DTO/ListReadDto/ExpensesReadDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/Expense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Events/CategoryEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Events/InitializationEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Initializers/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Repositories/ExpenseCategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Repositories/ExpenseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Services/ExpenseCategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Services/ExpenseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Utils/DataGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Utils/DataValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/java/com/janek/app/Utils/ExpenseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/resources/liquibase/01-create-expenses.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/resources/liquibase/02-create-categories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/main/resources/liquibase/master.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../expensemanager-config/src/src/test/java/com/janek/app/AppApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Controllers/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/main/java/com/janek/app/AppApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/META-INF/maven/archetype.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/main/resources/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/eureka/src/test/java/com/janek/app/AppApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/src/main/java/com/janek/app/demo/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../eureka/src/test/java/com/janek/app/demo/DemoApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../expense-category-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Controllers/ExpenseCategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Initializers/DataInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/ExpenseCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/java/com/janek/app/Entities/ExpenseCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../expense-category-manager/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../expensemanager-eureka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../expensemanager-eureka/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-app/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway-app/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../docker-commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-commands.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker-compose.yml" afterDir="false" />
     </list>
@@ -90,6 +95,7 @@
     "Application.AppApplication.executor": "Run",
     "Application.DemoApplication (1).executor": "Run",
     "Application.DemoApplication.executor": "Run",
+    "Application.com.example.demo.DemoApplication.executor": "Run",
     "JAR Application.app-0.0.1-SNAPSHOT.jar.executor": "Run",
     "JAR Application.app-1.0.0-SNAPSHOT.jar.executor": "Run",
     "JUnit.AppApplicationTests.contextLoads.executor": "Run",
@@ -99,28 +105,43 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/janek/Desktop/STUDIA/inzynierskie/rok 3/semestr 5/architektury usług internetowych/lab/spring-expensemanager/app/expensemanager-eureka",
+    "last_opened_file_path": "C:/Users/janek/Desktop/STUDIA/inzynierskie/rok 3/semestr 5/architektury usług internetowych/lab/spring-expensemanager/app/expensemanager-config/src/main",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\janek\Desktop\STUDIA\inzynierskie\rok 3\semestr 5\architektury usług internetowych\lab\spring-expensemanager\app\expensemanager-config\src\main" />
+      <recent name="C:\Users\janek\Desktop\STUDIA\inzynierskie\rok 3\semestr 5\architektury usług internetowych\lab\spring-expensemanager\app\expensemanager-config\src" />
+      <recent name="C:\Users\janek\Desktop\STUDIA\inzynierskie\rok 3\semestr 5\architektury usług internetowych\lab\spring-expensemanager\app\expense-category-manager\src\main\resources\liquibase" />
       <recent name="C:\Users\janek\Desktop\STUDIA\inzynierskie\rok 3\semestr 5\architektury usług internetowych\lab\spring-expensemanager\app\eureka\eureka" />
       <recent name="C:\Users\janek\AppData\Local\GitHubDesktop\app-3.4.6\architektury-uslug-internetowych-lab1\app\app\src\main\java\com\janek\app" />
-      <recent name="C:\Users\janek\AppData\Local\GitHubDesktop\app-3.4.6\architektury-uslug-internetowych-lab1\app\expense-category-manager\src\main\java\com\janek\app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.janek.app.Entities.DTO" />
       <recent name="com.janek.app.Events" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.AppApplication">
+  <component name="RunManager">
     <configuration name="AppApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.janek.app.AppApplication" />
       <module name="app (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.janek.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppApplication (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.janek.app.AppApplication" />
+      <module name="expensemanager-config" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.janek.app.*" />
@@ -160,31 +181,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DemoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.janek.app.demo.DemoApplication" />
-      <module name="demo (1)" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.janek.app.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="app-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/../expensemanager-config/target/app-0.0.1-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="demo (1) (com.example)" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="demo (1) (com.example)" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AppApplication (2)" />
       <item itemvalue="Application.AppApplication (1)" />
-      <item itemvalue="Application.DemoApplication" />
       <item itemvalue="Application.DemoApplication (1)" />
       <item itemvalue="Application.AppApplication" />
+      <item itemvalue="JAR Application.app-0.0.1-SNAPSHOT.jar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.app-0.0.1-SNAPSHOT.jar" />
+        <item itemvalue="Application.AppApplication (2)" />
+        <item itemvalue="Application.DemoApplication (1)" />
         <item itemvalue="Application.AppApplication" />
         <item itemvalue="Application.AppApplication (1)" />
-        <item itemvalue="Application.DemoApplication" />
-        <item itemvalue="Application.DemoApplication (1)" />
       </list>
     </recent_temporary>
   </component>

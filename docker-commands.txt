@@ -17,3 +17,7 @@ docker run -d -p 8083:8080 spring-expensemanager-gateway
 Eureka
 docker build --no-cache -t spring-eureka .
 docker run -d -p 8761:8080 spring-eureka
+
+Config
+docker build --no-cache -t spring-config .
+docker run -d -p 8761:8080 spring-config

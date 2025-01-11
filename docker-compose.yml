@@ -1,4 +1,22 @@
 services:
+  spring-config:
+    image: spring-config
+    restart: always
+    ports:
+      - "8086:8080"
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://spring-eureka:8080/eureka
+    networks:
+      - expense_manager_net
+    depends_on:
+      spring-eureka:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "http://spring-config:8080"]
+      interval: 5s
+      retries: 10
+      start_period: 10s
+      timeout: 10s
   spring-eureka:
     image: spring-eureka
     restart: always
@@ -19,25 +37,15 @@ services:
     image: spring-expensemanager-elements
     restart: always
     environment:
-      CATEGORY_MANAGEMENT_URL: "http://spring-expensemanager-categories:8080"
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/expense-manager
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: password
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      SPRING_JPA_SHOW_SQL: true
-      SPRING_H2_CONSOLE_ENABLED: false
-      SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
-      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://spring-eureka:8080/eureka
-      EUREKA_INSTANCE_APPNAME: expense-manager
+      SPRING_CONFIG_IMPORT: "configserver:http://spring-config:8080"
       EUREKA_INSTANCE_ID: "1"
-      EUREKA_INSTANCE_LEASE_EXPIRATION_DURATION_IN_SECONDS: 5
-      EUREKA_INSTANCE_LEASE_RENEWAL_INTERVAL_IN_SECONDS: 2
-      CATEGORY_MANAGER_NAME: expense-category-manager
+      
     ports:
       - "8080:8080"
     depends_on:
       spring-eureka:
+        condition: service_healthy
+      spring-config:
         condition: service_healthy
     networks:
       - expense_manager_net
@@ -52,27 +60,16 @@ services:
     image: spring-expensemanager-categories
     restart: always
     environment:
-      EXPENSE_MANAGEMENT_URL: "http://spring-expensemanager-elements:8080"
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db2:5432/category-manager
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: password
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      SPRING_JPA_SHOW_SQL: true
-      SPRING_H2_CONSOLE_ENABLED: false
-      SPRING_DATASOURCE_DRIVERCLASSNAME: org.postgresql.Driver
-      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
-      EUREKA_INSTANCE_APPNAME: expense-category-manager
-      EUREKA_INSTANCE_ID: "2"
-      EUREKA_INSTANCE_LEASE_EXPIRATION_DURATION_IN_SECONDS: 5
-      EUREKA_INSTANCE_LEASE_RENEWAL_INTERVAL_IN_SECONDS: 2
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://spring-eureka:8080/eureka
-      EXPENSE_MANAGER_NAME: expense-manager
+      EUREKA_INSTANCE_INSTANCE_ID: "2"
+      SPRING_CONFIG_IMPORT: "configserver:http://spring-config:8080"
     ports:
       - "8081:8080"
     depends_on:
       spring-expensemanager-elements:
         condition: service_healthy
       spring-eureka:
+        condition: service_healthy
+      spring-config:
         condition: service_healthy
     networks:
       - expense_manager_net
@@ -89,6 +86,8 @@ services:
     depends_on:
       spring-expensemanager-gateway:
         condition: service_started
+      spring-config:
+        condition: service_healthy
 
   spring-expensemanager-gateway:
     image: spring-expensemanager-gateway
@@ -102,6 +101,8 @@ services:
       - expense_manager_net
     depends_on:
       spring-eureka:
+        condition: service_healthy
+      spring-config:
         condition: service_healthy
   db:
     image: postgres:latest
